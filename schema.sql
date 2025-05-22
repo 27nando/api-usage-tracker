@@ -14,9 +14,10 @@ CREATE TABLE usage_logs (
   id SERIAL PRIMARY KEY,
   developer_id UUID REFERENCES developers(id),
   endpoint TEXT NOT NULL,
+  method TEXT NOT NULL,
   timestamp TIMESTAMP DEFAULT NOW(),
-  response_time_ms INTEGER,
-  status_code INTEGER
+  status_code INTEGER,
+  response_time_ms INTEGER
 );
 
 CREATE TABLE usage_summary (
